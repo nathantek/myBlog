@@ -1,0 +1,11 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getRank() === 'upper',
+                'list-group-item-danger': getRank() === 'under'}">
+  
+  <h4 [ngStyle]="{color: getColor()}">
+    <h2>{{ postName }}</h2> <p style="text-align: right"> {{ creationDate | date: 'short' }}</p><br /> {{postContent}} </h4>
+
+  <button class="btn btn-success" (click)="addRank()">Love it</button>
+  <button class="btn btn-danger" (click)="delRank()">Don't Love it</button>
+
+</li>
